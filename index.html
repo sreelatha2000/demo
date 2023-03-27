@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Show wishes</title>
+        <style>
+         body{
+            width:100vw;
+            height:100vh;
+            background-size: 100% 100vh;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+          #a,#b,#c,#d{
+            font-size: 50px;
+            color:rgb(0, 13, 255);
+        }
+        #image{
+            width:80px;
+            height:80px;
+           
+        }
+        </style>
+    </head>
+<body id="backgroundImg">
+   <div >
+        <div id="a"></div>
+        <div id="b"></div>
+        <div id="c"></div>
+        <div id="d"></div>
+   </div>
+   <div>
+    <img src="../cross.png" id="image" onclick="imagefun()" >
+   </div>
+    <script >
+        var date = new Date();
+        var hh = date.getHours();
+        
+        if (hh >= 0 && hh < 12) 
+        {
+           //document.getElementById("a").innerHTML="Good Morning!";
+           document.getElementById("backgroundImg").style.backgroundImage="url(../goodmorning.jpg)"
+        } else if (hh == 12)
+        {
+           // document.getElementById("backgroundImg").style.backgroundImage="url(./goodnoon.jpeg)"
+            document.getElementById("b").innerHTML="Good Noon!";
+        } else if (hh >= 12 && hh <= 17) 
+        {
+           // document.getElementById("c").innerHTML="Good Afternoon!";
+            document.getElementById("backgroundImg").style.backgroundImage="url(../goodnight.jpg)"
+        } 
+        else 
+        {
+            document.getElementById("backgroundImg").style.backgroundImage="url(../goodevening.jfif)"
+           // document.getElementById("d").innerHTML="Good Evening!";
+        }
+    
+        function imagefun(){
+            document.getElementById("backgroundImg").style.display="none";
+            document.getElementById("backgroundImg").style.display="none";
+            document.getElementById("backgroundImg").style.display="none";
+            document.getElementById("backgroundImg").style.display="none";
+       }
+       
+    </script>
+</body>
+</html>
